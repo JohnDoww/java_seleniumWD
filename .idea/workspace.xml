@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="235e9921-b3ae-4b40-8ad3-f4ce6749fce2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/CommonMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPageObjects.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/Pages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/UserPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/WebDriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chromedriver_win32/LICENSE.chromedriver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chromedriver_win32/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/HomePageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/HomePageMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/PagesMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/UserPageMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/CommonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helpers/CommonPageMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CommonPageObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPageElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePageElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePageElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/UserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/UserPageElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,7 +62,18 @@
       <recent name="C:\Users\Andrew\IdeaProjects\selenide" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HomePageTest.findCarHonda">
+  <component name="RunManager" selected="TestNG.HomePageTest.registration">
+    <configuration name="HomePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenide" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HomePageTest.findCarHonda" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenide" />
       <option name="PACKAGE_NAME" value="" />
@@ -99,9 +112,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.HomePageTest.findCarHonda" />
         <item itemvalue="TestNG.HomePageTest.registration" />
         <item itemvalue="TestNG.HomePageTest.test" />
+        <item itemvalue="TestNG.HomePageTest" />
+        <item itemvalue="TestNG.HomePageTest.findCarHonda" />
       </list>
     </recent_temporary>
   </component>
