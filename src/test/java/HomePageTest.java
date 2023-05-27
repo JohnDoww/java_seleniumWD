@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static utils.PropertiesFactory.getProperty;
 
 
-public class HomePageTest extends MainTest {
+public class HomePageTest {
 
     private WebDriver driver;
     private CommonPageElements commonPageElements;
