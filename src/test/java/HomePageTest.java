@@ -2,37 +2,40 @@ import helpers.CommonPageMethods;
 import helpers.SearchPageMethods;
 import helpers.UserPageMethods;
 import org.junit.jupiter.api.DisplayName;
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WindowType;
+
 import org.testng.annotations.*;
 import pages.CommonPageElements;
 import pages.SearchPageElements;
 import pages.UserPageElements;
+import utils.WebDriverFactory;
+
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static utils.PropertiesFactory.getProperty;
-import static utils.WebDriverFactory.getDriver;
+
 
 public class HomePageTest extends MainTest {
 
-    WebDriver driver;
-    CommonPageElements commonPageElements;
-    CommonPageMethods commonPageMethods;
-    UserPageElements userPageElements;
-    UserPageMethods userPageMethods;
-    SearchPageElements searchPageElements;
-    SearchPageMethods searchPageMethods;
+    private WebDriver driver;
+    private CommonPageElements commonPageElements;
+    private CommonPageMethods commonPageMethods;
+    private UserPageElements userPageElements;
+    private UserPageMethods userPageMethods;
+    private SearchPageElements searchPageElements;
+    private SearchPageMethods searchPageMethods;
+    private final WebDriverFactory webDriverFactory = WebDriverFactory.getInstance();
 
-    @BeforeClass
-    public void setUp() {
-    }
 
     @BeforeMethod
     public void setUp1() {
 
-        driver = getDriver("chrome");
+        driver = webDriverFactory.openBrowser("chrome");
         driver.get(getProperty("auto_ria_url"));
         commonPageElements = new CommonPageElements(driver);
         commonPageMethods = new CommonPageMethods(driver, commonPageElements);
@@ -76,51 +79,37 @@ public class HomePageTest extends MainTest {
 
     @Test(priority = 5)
     @DisplayName("Check popAp where will display full mobile phone of seller")
-    public void showSellerPhone(){
+    public void showSellerPhone() {
         commonPageMethods.findAnyCar();
         searchPageMethods.openFirstCarFromSearch();
         searchPageMethods.showSellerMobile();
         String phrase = searchPageElements.getBlockFullMobilePhone().getText();
-        assertThat(phrase).contains(" Телефонуйте, продавець ");
+        assertThat(phrase).containsAnyOf("Телефонуйте, продавець ");
     }
 
     @Test(priority = 3)
-    @DisplayName("Be sure we have the opportunity to make a donate")
-    public void opportunityToMakeDonate() {
+    @DisplayName("Be sure we we opened and appeared on the right article")
+    public void compareArticleNameAndTitle() {
+        commonPageElements.getNewsButton().click();
 
-        commonPageElements.getPromotionTitle().click();
-        String donatAmount = commonPageMethods.makeDonate();
-        String existAmount = commonPageElements.getInputDonateArea().getText();
+        String expectedArticleTitle = commonPageMethods.nameAdvertisedArticle();
+        String actualArticleTitle = commonPageMethods.titleOfOpenedArticle();
 
-        assertThat(donatAmount).containsIgnoringWhitespaces(existAmount);
+        assertThat(expectedArticleTitle).containsIgnoringWhitespaces(actualArticleTitle);
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     @DisplayName("Add car to favorites page and check the added car in favorites")
     public void addCarToFavoritesAndCheckFavorites() {
-
-        commonPageMethods.logIn();
+        commonPageElements.getButtonBuCar().click();
         String nameCarToFavorites = searchPageMethods.addBuCarToFavorites();
         String carFromFavorites = userPageMethods.titleFirstCarFromFavorites();
 
         assertThat(nameCarToFavorites).containsIgnoringWhitespaces(carFromFavorites);
     }
 
-    @AfterClass
-    public void treatDown() {
-        driver.quit();
-    }
-
     @AfterMethod
     public void treat1Down() {
-//        this.driver.quit();
+        driver.quit();
     }
-    //HW
-//- TestNG
-//1 use annotation Paramitrized test for login test with wrong and correct data
-//2 use @RepeatedTest("how many times we will run")
-
-//3 use @DisplayName
-
-
 }

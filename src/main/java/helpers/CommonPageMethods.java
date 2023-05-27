@@ -2,7 +2,6 @@ package helpers;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -64,7 +63,6 @@ public class CommonPageMethods extends BasePageMethods {
         driver.switchTo().defaultContent();
     }
 
-
     /**
      * Method return the code from email confirm letter
      */
@@ -110,34 +108,6 @@ public class CommonPageMethods extends BasePageMethods {
     }
 
     /**
-     * Method for which login. There we use credential which were used whil registration from test "registration".
-     * If you don't run registration test, you should input your own credentials for login.
-     */
-    public void logIn() {
-        commonPageElements.getLogInSignIn().click();
-        driver.switchTo().frame(commonPageElements.getLoginFrameRia());
-
-        commonPageElements.getInputEmailLogIn().sendKeys(testMail);
-        commonPageElements.getInputPasswordLogIn().sendKeys(userPassword);
-
-        commonPageElements.getSubmitLogIn().click();
-        driver.switchTo().defaultContent();
-    }
-
-    /**
-     * This method choose 500uah donate on the donate page and must return amount of donat (expected amount - "500")
-     */
-    public String makeDonate() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(
-                ExpectedConditions.elementToBeClickable(commonPageElements.getAmountOfDonate())
-        );
-//        commonPageElements.getAmountOfDonate().click();
-        String amountDonate = commonPageElements.getAmountOfDonate().getText();
-        return amountDonate;
-    }
-
-    /**
      * This method allows you to random scope of cars by using filter area from home page.
      * Filtering execute only by time range where cars were produced
      */
@@ -146,8 +116,8 @@ public class CommonPageMethods extends BasePageMethods {
             int from;
             int to;
             do {
-                from = (int)(Math.random()*36)+1980;
-                to = (int)(Math.random()*33)+1990;
+                from = (int) (Math.random() * 36) + 1980;
+                to = (int) (Math.random() * 33) + 1990;
             } while (to > from);
             commonPageElements.getInputCarYear().click();
 
@@ -159,6 +129,25 @@ public class CommonPageMethods extends BasePageMethods {
             commonPageElements.getEmptySpaceHomePage().click();
             commonPageElements.getButtonSearchCar().click();
         }
+    }
+
+    /**
+     * There we opened and get the name article on the News page
+     */
+    public String nameAdvertisedArticle() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        wait.until(ExpectedConditions.visibilityOf(commonPageElements.getArticleBox()));
+        String titleOfArticle = commonPageElements.getThirdArticle().getText();
+        commonPageElements.getThirdArticle().click();
+        return titleOfArticle;
+    }
+
+    /**
+     * There we get the title of the opened article
+     */
+    public String titleOfOpenedArticle() {
+        return commonPageElements.getTitleOpenedArticle().getText();
     }
 
 

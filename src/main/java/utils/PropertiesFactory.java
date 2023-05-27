@@ -7,7 +7,7 @@ import java.util.Properties;
 public class PropertiesFactory {
 
     private static FileInputStream fileInputStream;
-    private static Properties properties;
+    private static final Properties properties;
 
     static {
         try {
