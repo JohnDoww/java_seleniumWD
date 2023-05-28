@@ -24,7 +24,7 @@ public class UserPageElements extends BasePageElement {
         return openFavorites;
     }
 
-    @FindBy(xpath = "/html/body/div[6]/div[5]/div[2]/div[3]/div[1]/div/a")
+    @FindBy(xpath = "//*[@class='notepad-tickets']/div[1]//*[@id='mainPhotoBlock']")
     private WebElement lastCarAddedToFavorites;
 
     public WebElement getLastCarAddedToFavorites() {
