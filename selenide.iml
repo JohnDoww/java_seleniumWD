@@ -9,6 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/allure-report" />
+      <excludeFolder url="file://$MODULE_DIR$/allure-results" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -82,13 +85,9 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.24.2" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.12.21" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter:5.10.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.10.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.10.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-params:5.10.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.10.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.10.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-testng:2.22.1" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-java-commons:2.22.1" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-model:2.22.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.qameta.allure:allure-test-filter:2.22.1" level="project" />
   </component>
 </module>

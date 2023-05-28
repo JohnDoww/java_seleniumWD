@@ -1,7 +1,6 @@
 import helpers.CommonPageMethods;
 import helpers.SearchPageMethods;
 import helpers.UserPageMethods;
-import org.junit.jupiter.api.DisplayName;
 
 import org.openqa.selenium.WebDriver;
 
@@ -46,7 +45,6 @@ public class HomePageTest {
     }
 
     @Test(priority = 1)
-    @DisplayName("Check full process of user registration")
     public void checkRegistrationFlow() {
 
         commonPageMethods.createTestEmail();
@@ -68,7 +66,6 @@ public class HomePageTest {
     }
 
     @Test(priority = 4)
-    @DisplayName("Check car maker in the home page and in the search results page")
     public void checkMakerOnHomeFilterAndSearchPages() {
 
         String makerTitleFromHomePage = commonPageMethods.searchOldCarHonda();
@@ -78,7 +75,6 @@ public class HomePageTest {
     }
 
     @Test(priority = 5)
-    @DisplayName("Check popAp where will display full mobile phone of seller")
     public void showSellerPhone() {
         commonPageMethods.findAnyCar();
         searchPageMethods.openFirstCarFromSearch();
@@ -88,7 +84,6 @@ public class HomePageTest {
     }
 
     @Test(priority = 3)
-    @DisplayName("Be sure we we opened and appeared on the right article")
     public void compareArticleNameAndTitle() {
         commonPageElements.getNewsButton().click();
 
@@ -99,7 +94,6 @@ public class HomePageTest {
     }
 
     @Test(priority = 2)
-    @DisplayName("Add car to favorites page and check the added car in favorites")
     public void addCarToFavoritesAndCheckFavorites() {
         commonPageElements.getButtonBuCar().click();
         String nameCarToFavorites = searchPageMethods.addBuCarToFavorites();
