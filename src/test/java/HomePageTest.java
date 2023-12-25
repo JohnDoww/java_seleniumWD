@@ -44,7 +44,7 @@ public class HomePageTest {
         searchPageMethods = new SearchPageMethods(driver, searchPageElements);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, description = "Pass registration flow")
     public void checkRegistrationFlow() {
 
         commonPageMethods.createTestEmail();
@@ -65,7 +65,7 @@ public class HomePageTest {
         assertThat(registrationFullName).containsIgnoringWhitespaces(fullNamInProfile);
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "The Maker displayed correctly into search results when using home page filter")
     public void checkMakerOnHomeFilterAndSearchPages() {
 
         String makerTitleFromHomePage = commonPageMethods.searchOldCarHonda();
@@ -74,7 +74,7 @@ public class HomePageTest {
         assertThat(carTitleFromSearch).containsIgnoringWhitespaces(makerTitleFromHomePage);
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "Seller telephone is displayed")
     public void showSellerPhone() {
         commonPageMethods.findAnyCar();
         searchPageMethods.openFirstCarFromSearch();
@@ -83,7 +83,7 @@ public class HomePageTest {
         assertThat(phrase).containsAnyOf("Телефонуйте, продавець ");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Article title inside and outside of article are the same")
     public void compareArticleNameAndTitle() {
         commonPageElements.getNewsButton().click();
 
@@ -93,7 +93,7 @@ public class HomePageTest {
         assertThat(expectedArticleTitle).containsIgnoringWhitespaces(actualArticleTitle);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "The Car added to the favorites list")
     public void addCarToFavoritesAndCheckFavorites() {
         commonPageElements.getButtonBuCar().click();
         String nameCarToFavorites = searchPageMethods.addBuCarToFavorites();

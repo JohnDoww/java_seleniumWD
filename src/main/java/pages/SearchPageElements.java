@@ -39,7 +39,7 @@ public class SearchPageElements extends BasePageElement {
         return nameOfCarToFavorites;
     }
 
-    @FindBy(xpath = "//a[contains(text(), 'показати')] ")
+    @FindBy(css = "#userInfoBlock .phone.bold")
     private WebElement buttonShowSellerNumber;
 
     public WebElement getButtonShowSellerNumber() {
